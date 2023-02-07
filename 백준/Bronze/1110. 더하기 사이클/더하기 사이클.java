@@ -1,27 +1,29 @@
 import java.io.*;
-import java.util.*;
+
 public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int n = Integer.parseInt(br.readLine());
-        if (n == 0) {
-            System.out.print(1);
-            return;
-        }
-        int ans = n;
-        int newN = 0;
+
+        int num = Integer.parseInt(br.readLine());
+        int sum = num;
         int count = 0;
-        while (newN != n) {
-            newN = ans;
+
+        while(true) {
+
+            int a = sum % 10; // 6
+            int b = a + sum/10; // 8
+
+            if(b >= 10){
+                b = b % 10;
+            }
+            sum = a*10+b;
             count++;
-            if (n < 10) {
-                n = n*10 + n;
-            } else {
-                n = (n%10)*10 + ((n%10)+(n/10))%10;
+            if(num == sum) {
+                System.out.print(count);
+                break;
             }
         }
-
-        System.out.print(count);
     }
+
 }
