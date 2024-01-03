@@ -32,3 +32,8 @@
 
  <p>각 테스트 케이스에 대해, $N+1$이 $N$의 끝 두 자리로 나누어 떨어진다면 <span style="color:#e74c3c;"><code>Good</code></span>을, 그렇지 않다면 <span style="color:#e74c3c;"><code>Bye</code></span>를 한 줄에 하나씩 차례로 출력하여라.</p>
 
+### 나의 메모
+variable--; variable > 0 를 합쳐놓은게 while(variable-- > 0)
+--> 화살표로 보여서 낯설어 보였는데 - (증감 연산자)와 > (꺾쇠괄호) 로 나눠봐야함
+
+기본...기본 기본!!!
