@@ -22,3 +22,8 @@
 
  <p>시험 성적을 출력한다.</p>
 
+### 나의 메모
+숏코딩 구경하다가 궁금한 
+System.out.print("FFFFFFDCBAA".charAt(new java.util.Scanner(System.in).nextInt()/10)); 
+입력받은 수를 10으로 나눠서 charAt의 인덱스 값으로 사용하는 방식
+90을 입력받았으면 9니깐 "FFFFFFDCBAA"의 인덱스 9 는 "A"
