@@ -1,27 +1,41 @@
 import java.util.Scanner;
 
 public class Main {
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int A = sc.nextInt();
-        int B = sc.nextInt();
-        int C = sc.nextInt();
-
-        B = A * 60 + B + C;
-        if(B >= 1440) {
-            B = B - 1440;
+   
+   public static void main(String[] args) {
+      
+      Scanner sc = new Scanner(System.in);
+      int a = sc.nextInt();
+      int b = sc.nextInt();
+      int c = sc.nextInt();
+      
+      
+      if(c>=60) { 
+         a = c/60 + a;
+         b = c%60 + b;
+         if(b >= 60) {
+            a = a+1;
+            b = b-60;
+         }
+      }
+      
+      else {
+         b = b+c;
+         if(b >= 60) {
+            a = a+1;
+            b = b-60;
+         }
         }
-
-        if(B < 59) {
-            A = 0;
-        }
-        else {
-            A = B/60;
-            B = B - A * 60;
-        }
-
-        System.out.println(A + " " + B);
-        sc.close();
-    }
-}
+      
+      if(a == 24) {
+         a = 0;
+      }
+      else if(a > 24) {
+         a = a - 24;
+      }
+      
+      System.out.println(a+ " " +b);
+      
+      sc.close();
+   }
+}	
