@@ -1,18 +1,16 @@
 import java.util.Scanner;
 
 public class Main {
-
-    public static void main(String[] args) {
+    public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
 
-        int n = sc.nextInt();
+        StringBuilder sb = new StringBuilder();
+        int n = sc.nextInt()/4;
 
-        String l = new String();
-        for (int i = 0; i < n/4; i++) {
-            l+= "long"+" ";
+        while(n-->0){
+            sb.append("long ");
         }
 
-        System.out.println(l+"int");
-        sc.close();
+        System.out.println(sb + "int");
     }
 }
