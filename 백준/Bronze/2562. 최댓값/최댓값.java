@@ -1,22 +1,22 @@
-import java.util.Scanner;
+import java.io.*;
+class Main {
+    public static void main(String[] args) throws IOException {
 
-public class Main {
-    public static void main(String[]args) {
-        Scanner sc = new Scanner(System.in);
-        int[] arr = new int[9];
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        int arr[] = new int[9];
         int max = 0;
-        for(int i=0; i<arr.length; i++) {
-            arr[i] = sc.nextInt();
+        int n = 0;
+
+        for(int i=0; i < arr.length; i++) {
+            arr[i] = Integer.parseInt(br.readLine());
             if(max < arr[i]) {
                 max = arr[i];
+                n=i+1;
             }
         }
-        for(int i=0; i<arr.length; i++) {
-            if(max == arr[i]) {
-                System.out.print(arr[i] + "\n" + (i+1));
-                break;
-            }
-        }
-
+        bw.write(max + "\n" + n);
+        bw.close();
     }
 }
