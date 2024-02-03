@@ -1,31 +1,35 @@
-import java.util.Scanner;
+import java.io.*;
+import java.util.StringTokenizer;
 
-public class Main {
+class Main {
+    public static void main(String[] args) throws IOException {
 
-    public static void main(String[] args) {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        Scanner sc = new Scanner(System.in);
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
+        int n  = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
+        int[] arr = new int[n];
 
-        int n = sc.nextInt(); // 바구니 수
-        int m = sc.nextInt(); // 테스트 케이스 횟수
+        int i, j, k;
+        String z = "";
+        for(int x=0; x < m; x++) {
 
-        int[] arr = new int[n]; // 바구니 배열 생성
+            st = new StringTokenizer(br.readLine());
+            i = Integer.parseInt(st.nextToken());
+            j = Integer.parseInt(st.nextToken());
+            k = Integer.parseInt(st.nextToken());
 
-        for (int x=0; x<m; x++) { // 테스트 케이스 횟수 만큼 반복
-            int i = sc.nextInt(); // i 바구니
-            int j = sc.nextInt(); // j 바구니
-            int k = sc.nextInt(); // k번 공
-
-            for(int y=i-1; y<j; y++) {
-                arr[y] = k;
+            for(;i<=j;i++){
+                arr[i-1] = k;
             }
         }
-
-        for(int i=0; i<arr.length; i++){
-            System.out.print(arr[i] + " ");
+        for(int x=0; x<arr.length; x++){
+            z += arr[x] + " ";
         }
-
-        sc.close();
+        bw.write(z);
+        bw.close();
     }
 }
