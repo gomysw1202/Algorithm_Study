@@ -1,28 +1,16 @@
-import java.util.Scanner;
+import java.io.*;
+import java.util.HashSet;
 
-public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+class Main {
+    public static void main(String[] args) throws IOException {
 
-        int[] n = new int[10];
-        int count = 0;
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        for (int i = 0; i < n.length; i++) {
-            n[i] = sc.nextInt() % 42;
+        HashSet<Integer> set = new HashSet<>();
+
+        for(int i=0; i<10; i++){
+            set.add(Integer.valueOf(br.readLine())%42);
         }
-
-        for (int i = 0; i < n.length; i++) {
-            int temp = -1;
-            for (int j = i; j < n.length; j++) {
-                if (n[i] == n[j]) {
-                    temp++;
-                }
-            }
-            if (temp == 0) {
-                count++;
-            }
-        }
-        System.out.println(count);
+        System.out.println(set.size());
     }
 }
-
