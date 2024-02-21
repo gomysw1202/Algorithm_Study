@@ -1,11 +1,9 @@
-import java.util.Scanner;
+import java.io.*;
+class Main {
+    public static void main(String[] args) throws IOException {
 
-public class Main {
-    public static void main(String[]args) {
-        Scanner sc = new Scanner(System.in);
-        
-        String[] sArr = sc.nextLine().split("");
-
-        System.out.println(sArr.length);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine();
+        System.out.println(str.length());
     }
 }
