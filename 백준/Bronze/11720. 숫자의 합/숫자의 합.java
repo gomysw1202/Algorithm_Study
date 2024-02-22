@@ -1,19 +1,17 @@
-import java.util.Scanner;
+import java.io.*;
+class Main {
+    public static void main(String[] args) throws IOException {
 
-public class Main {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
 
-    public static void main(String[] args) {
+        char[] arr = br.readLine().toCharArray();
+        int sum =0;
 
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        String list = sc.next();
-
-        char[] arr = list.toCharArray();
-        int sum = 0;
-        for(int i = 0; i < arr.length; i++) {
-            sum += arr[i] - 48;
+        for(int i=0; i<n; i++){
+            sum += arr[i] - '0';
         }
+
         System.out.println(sum);
-        sc.close();
     }
 }
