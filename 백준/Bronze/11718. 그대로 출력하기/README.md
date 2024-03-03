@@ -22,3 +22,11 @@
 
  <p>입력받은 그대로 출력한다.</p>
 
+### 나의 메모
+EOF(End Of File)
+데이터 소스로 부터 더이상 읽을 소스가 없음을 나타냄
+Scanner를 사용할 땐 hasNext() 를 사용하면 입력값이 없을 때 false를 반환해줌
+BufferReader는 입력값을 null과 비교해서 알아낸다
+if(readLine == null) break;
+
+입력이 최대 몇개가 될지 모를 때 주로 사용함
