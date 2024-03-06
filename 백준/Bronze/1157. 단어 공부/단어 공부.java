@@ -1,42 +1,35 @@
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
+import java.io.*;
+import java.util.Arrays;
+import java.util.Locale;
 
-public class Main {
-
+class Main {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        String st = br.readLine().toUpperCase();
 
-        String s = br.readLine().toUpperCase();// 입력 받은 문자열 대문자로 변경
-        int[] alpa = new int[26]; // 대문자 알파벳 길이만큼 배열 생성
+        int[] arr = new int[26];
+        int max=0;
+        int c=0;
 
-        for (int i = 0; i < s.length(); i++) { // 문자 길이만큼 반복
-            alpa[(int) s.charAt(i) - 65] += 1; // 해당 알파벳 위치에 1증가
+        for(int i=0; i<st.length(); i++){
+            arr[st.charAt(i)-65]++;
         }
 
-        int max = 0; // 최대 언급 카운트 담기
-        int rs = 0;
-        for (int i = 0; i < alpa.length; i++) {
-            if (alpa[i] > max) {
-                max = alpa[i];
-                rs = i+65;
+        for(int i=0; i<arr.length; i++){
+            if(max < arr[i]) {
+                max = arr[i];
+                c = i+65;
             }
         }
 
-        for(int i=0; i<alpa.length; i++) {
-           if(max==alpa[i] && i!=rs-65) {
-               rs = 63;
-           }
+        for(int i=0; i<arr.length; i++){
+            if(max == arr[i] && c-65 != i) {
+               c = 63;
+            }
         }
 
-        bw.write((char)rs);
+        System.out.println((char) c);
 
-        bw.flush();
-        bw.close();
-        br.close();
     }
 }
