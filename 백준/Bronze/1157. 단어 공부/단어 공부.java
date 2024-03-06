@@ -1,35 +1,30 @@
-import java.io.*;
-import java.util.Arrays;
-import java.util.Locale;
+import java.io.IOException;
 
 class Main {
     public static void main(String[] args) throws IOException {
-
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String st = br.readLine().toUpperCase();
-
+        int c = System.in.read();
         int[] arr = new int[26];
         int max=0;
-        int c=0;
+        int n=0;
 
-        for(int i=0; i<st.length(); i++){
-            arr[st.charAt(i)-65]++;
+        while(c>64){
+            if(c<91){
+                arr[c-65]++;
+            }else {
+                arr[c-97]++;
+            }
+            c = System.in.read();
         }
 
         for(int i=0; i<arr.length; i++){
-            if(max < arr[i]) {
+            if(max<arr[i]) {
                 max = arr[i];
-                c = i+65;
+                n = i + 65;
+            }else if (max == arr[i]) {
+                n = 63;
             }
         }
-
-        for(int i=0; i<arr.length; i++){
-            if(max == arr[i] && c-65 != i) {
-               c = 63;
-            }
-        }
-
-        System.out.println((char) c);
+        System.out.println((char) n);
 
     }
 }
