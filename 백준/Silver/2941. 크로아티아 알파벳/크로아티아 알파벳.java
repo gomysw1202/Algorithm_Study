@@ -1,23 +1,18 @@
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-public class Main {
-
+class Main {
     public static void main(String[] args) throws IOException {
-       BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-       String[] sArr = {"c=","c-","dz=","d-","lj","nj","s=","z="};
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        
+        String st = br.readLine();
 
-       String s = br.readLine();
-
-       for(String val : sArr) {
-           while(s.contains(val)){
-               s = s.replace(val, "A");
-           }
-       }
-
-        System.out.println(s.length());
-       
-       br.close();
+        System.out.print(st.replaceAll("c=|c-|dz=|d-|lj|nj|s=|z="," ").length());
     }
-
 }
+
+// replaceAll() 안에는 정규식 표현
+
+
