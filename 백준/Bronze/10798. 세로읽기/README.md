@@ -47,12 +47,11 @@ P 5 h 3 k x</pre>
  <p>영석이가 세로로 읽은 순서대로 글자들을 출력한다. 이때, 글자들을 공백 없이 연속해서 출력한다. </p>
 
  ### 나의 메모
- 배열 선언 초기값
- byte/short/int/long - 0
- float/double - 0.0
- char - null('\u0000') 
- boolean - false
-
- char의 초기값을 검사할 때
- arr[i] != 0 또는 arr[i] != '\0'와 같이 검사해야 함
+ 배열 선언 초기값</br>
+ byte/short/int/long - 0</br>
+ float/double - 0.0</br>
+ char - null('\u0000') </br>
+ boolean - false</br>
+</br>
+ char의 초기값을 검사할 때 arr[i] != 0 또는 arr[i] != '\0'와 같이 검사해야 함
  
