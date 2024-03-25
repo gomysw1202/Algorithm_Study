@@ -9,7 +9,6 @@ class Main {
 
         int[] arr = new int[5];
         int sum = 0;
-        int m = 0;
         for(int i=0; i<5; i++){
             arr[i] = Integer.parseInt(br.readLine());
             sum += arr[i];
